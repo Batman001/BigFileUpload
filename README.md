@@ -1,14 +1,5 @@
 
-![mahua](mahua-logo.jpg)
----
-title: SpringBoot+Mybatis 后端分离实现大文件分块上传
-date: 2019-07-05 17:04:36
-categories: "SpringBoot"  MyBatis
-tags: 
-    - SpringBoot
-    - Vue.js
-    - 文件上传
----
+
 ## SpringBoot + Mybatis + MySql 搭建后端大文件上传项目
 ### 悄悄说 目前只上传后端 前端工作 未上传
 > 参考博客地址:  [https://luoliangdsga.github.io](https://luoliangdsga.github.io)  
