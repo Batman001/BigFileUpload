@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.fileupload.dao.ChunkDao" >
+
+    <resultMap id="ChunkNumberResultMap" type="com.test.fileupload.model.Chunk">
+        <result column="chunk_number" property="chunkNumber" />
+    </resultMap>
+
+    <insert id="saveChunk" parameterType="com.test.fileupload.model.Chunk" >
+        INSERT INTO chunk (id, chunk_number, chunk_size, current_chunk_size, total_size, identifier, filename,relative_path, total_chunks)
+        values (
+            #{id}, #{chunkNumber}, #{chunkSize}, #{currentChunkSize}, #{totalSize},
+            #{identifier}, #{filename}, #{relativePath}, #{totalChunks}
+        )
+    </insert>
+
+    <select id="getChunkNumbers" resultMap="ChunkNumberResultMap">
+        SELECT chunk_number from chunk WHERE identifier = #{identifier}
+    </select>
+
+</mapper>
