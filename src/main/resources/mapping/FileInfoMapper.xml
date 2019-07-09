@@ -3,9 +3,9 @@
 <mapper namespace="com.test.fileupload.dao.FileInfoDao">
 
     <insert id="addFileInfo" parameterType="com.test.fileupload.model.FileInfo">
-        INSERT INTO file_info (id, filename, identifier, location, total_size, type)
+        INSERT INTO file_info (filename, identifier, location, total_size, type)
         values (
-            #{id}, #{filename}, #{identifier}, #{location}, #{totalSize}, #{type}
+            #{filename}, #{identifier}, #{location}, #{totalSize}, #{type}
         )
     </insert>
 
