@@ -4,7 +4,7 @@ import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.servlet.MultipartConfigElement;
 
@@ -13,7 +13,7 @@ import javax.servlet.MultipartConfigElement;
  * 解决跨域问题的配置类
  */
 @Configuration
-public class Configure extends WebMvcConfigurerAdapter {
+public class Configure implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
