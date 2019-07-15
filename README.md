@@ -1,7 +1,7 @@
 
 
 ## SpringBoot + Mybatis + MySql 搭建后端大文件上传项目
-### 悄悄说 目前只上传后端 前端工作 未上传
+### 悄悄说 目前代码中只包含后端代码 前端代码参考git地址 [https://github.com/LJ906/bigFileUploader]
 > 参考博客地址:  [https://luoliangdsga.github.io](https://luoliangdsga.github.io)  
 # 上传有哪些功能？
 * `文件及文件夹`上传功能
