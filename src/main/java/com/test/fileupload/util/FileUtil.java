@@ -38,6 +38,12 @@ public class FileUtil {
                 .append(chunk.getChunkNumber()).toString();
     }
 
+    /**
+     * 对上传文件的分片数据进行合并
+     * @param targetFile 目标文件
+     * @param folder 合并后的文件夹
+     * @param filename 合并后的文件名称
+     */
     public static void merge(String targetFile, String folder, String filename) {
         try {
             Files.createFile(Paths.get(targetFile));

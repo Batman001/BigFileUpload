@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -46,6 +45,11 @@ public class UploadController {
     boolean needMerge;
 
 
+    /**
+     * 处理前台的chunk的post请求, 将分片数据写入本地 同时将分片信息吸入数据库
+     * @param chunk 前台传递的chunk分片信息
+     * @return 后台执行结果
+     */
     @PostMapping("/chunk")
     public Object uploadChunk(Chunk chunk) {
         MultipartFile file = chunk.getFile();
@@ -74,11 +78,10 @@ public class UploadController {
     /**
      * get请求 用于判断chunk分片数据是否上传过
      * @param chunk 数据分片
-     * @param response 返回前台response信息
      * @return 返回给前台
      */
     @GetMapping("/chunk")
-    public Object checkChunk(Chunk chunk, HttpServletResponse response) {
+    public Object checkChunk(Chunk chunk) {
 
         List<Chunk> uploadedChunk = chunkService.getChunkNumbers(chunk.getIdentifier());
 
@@ -97,6 +100,11 @@ public class UploadController {
         return res;
     }
 
+    /**
+     * 处理前台的合并文件的post的请求
+     * @param fileInfo 需要合并的文件具体信息
+     * @return
+     */
     @PostMapping("/mergeFile")
     public Object mergeFile(@RequestBody FileInfo fileInfo) {
         String filename = fileInfo.getFilename();
