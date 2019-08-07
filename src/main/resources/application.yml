@@ -45,3 +45,5 @@ pagehelper:
 
 prop:
   upload-folder: ./files
+
+server.connectionTimeout : 80000

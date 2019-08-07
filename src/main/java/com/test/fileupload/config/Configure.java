@@ -7,6 +7,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.servlet.MultipartConfigElement;
+import java.io.File;
 
 /**
  * @author Batman create on 2019-07-09 00:06
@@ -25,10 +26,20 @@ public class Configure implements WebMvcConfigurer {
     @Bean
     public MultipartConfigElement multipartConfigElement() {
         MultipartConfigFactory factory = new MultipartConfigFactory();
+
+        // 解决后台报错Unexpected EOF read on the socket
+        String location = System.getProperty("user.dir") + "/data/tmp";
+        File tmpFile = new File(location);
+        if(!tmpFile.exists()) {
+            tmpFile.mkdirs();
+        }
+        factory.setLocation(location);
         // 单个数据的大小 设置2Mb
         factory.setMaxFileSize("2048KB");
         // 总上传数据的大小 设置为1024Mb
         factory.setMaxRequestSize("1048576KB");
         return factory.createMultipartConfig();
     }
+
+
 }
