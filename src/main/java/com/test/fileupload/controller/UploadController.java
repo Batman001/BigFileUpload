@@ -88,7 +88,7 @@ public class UploadController {
         if (uploadedChunk.size() == 0) {
             return OperateTipsUtils.operateTips(OperateTipsUtils.STATUS_NO_CHUNK,"未上传过该文件任何分片数据", false, "");
         }
-        Map<String, Object> res = new HashMap<>(3);
+        Map<String, Object> res = new HashMap<>(4);
         boolean mergeFlag = chunk.getTotalChunks() == uploadedChunk.size();
         List<Integer> uploaded = new ArrayList<>();
         for(Chunk item:uploadedChunk) {
