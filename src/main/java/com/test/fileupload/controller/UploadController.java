@@ -46,7 +46,7 @@ public class UploadController {
 
 
     /**
-     * 处理前台的chunk的post请求, 将分片数据写入本地 同时将分片信息吸入数据库
+     * 处理前台的chunk的post请求, 将分片数据写入本地 同时将分片信息写入数据库
      * @param chunk 前台传递的chunk分片信息
      * @return 后台执行结果
      */
