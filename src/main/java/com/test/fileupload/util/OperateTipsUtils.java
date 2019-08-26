@@ -26,7 +26,7 @@ public class OperateTipsUtils {
 	public static int STATUS_NO_CHUNK = 21;
 
 	/**
-	 * 返回给前端的结果状态吗：上传过该文件的分片数据
+	 * 返回给前端的结果状态码：上传过该文件的分片数据
 	 */
 	public static int STATUS_CHUNKED = 22;
 
@@ -54,26 +54,5 @@ public class OperateTipsUtils {
 		OPERATE_TIPS.put("detail", detail);
 		return OPERATE_TIPS;
 	}
-
-
-
-	/**
-	 * 根据变长paraKeyValues生成Map<String, Object>，若paraKeyValues长度为奇数，最后一个key的值设置为null
-	 * @param paraKeyValues 变长参数，存放要生成参数的key和Value,偶数索引为key值，奇数索引为Value值
-	 * @return
-	 */
-	public static Map<String, Object> generateParasMap(String...paraKeyValues){
-		Map<String, Object> paraValues = new HashMap<String, Object>();
-		int length = paraKeyValues.length;
-		for(int index = 0; index < length;) {
-			if(index + 1 <= length -1) {
-				paraValues.put(paraKeyValues[index++], paraKeyValues[index++]);
-			}else {
-				paraValues.put(paraKeyValues[index++], null);
-			}
-		}
-		return paraValues;
-	}
-
 
 }
