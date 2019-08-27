@@ -33,7 +33,7 @@ mybatis:
 #showSql
 logging:
   level:
-    com.caini.fileupload.*: debug
+    com.test.fileupload.*: debug
 
 #pagehelper分页插件
 pagehelper:

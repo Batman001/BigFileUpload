@@ -68,4 +68,5 @@ public class FileInfo implements Serializable {
     public void setLocation(String location) {
         this.location = location;
     }
+
 }
