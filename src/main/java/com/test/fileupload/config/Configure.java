@@ -34,10 +34,10 @@ public class Configure implements WebMvcConfigurer {
             tmpFile.mkdirs();
         }
         factory.setLocation(location);
-        // 单个数据的大小 设置2Mb
-        factory.setMaxFileSize("2048KB");
-        // 总上传数据的大小 设置为1024Mb
-        factory.setMaxRequestSize("1048576KB");
+        // 单个数据的大小 设置5Mb
+        factory.setMaxFileSize("5MB");
+        // 总上传数据的大小 设置为10GB
+        factory.setMaxRequestSize("10240MB");
         return factory.createMultipartConfig();
     }
 
